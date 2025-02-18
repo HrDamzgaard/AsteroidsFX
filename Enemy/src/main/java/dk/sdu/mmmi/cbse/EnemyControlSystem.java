@@ -15,13 +15,13 @@ import static java.util.stream.Collectors.toList;
 public class EnemyControlSystem implements IEntityProcessingService {
 
     private final Random random = new Random();
-    private final double shootingProbability = 0.02; // 2% chance to shoot per frame
+    private final double shootingProbability = 0.35; // 35% chance to shoot per frame
 
     @Override
     public void process(GameData gameData, World world) {
         for (Entity enemy : world.getEntities(Enemy.class)) {
             // Balanced random rotation: -5, 0, or +5
-            int[] rotationValues = {-5, 0, 5};
+            int[] rotationValues = {-5, 0, 5}; // change here to change rotation
             enemy.setRotation(enemy.getRotation() + rotationValues[random.nextInt(rotationValues.length)]);
 
             // Move forward slightly

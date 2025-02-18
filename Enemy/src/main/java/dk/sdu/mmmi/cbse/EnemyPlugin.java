@@ -24,13 +24,13 @@ public class EnemyPlugin implements IGamePluginService {
 
     private Entity createEnemyShip(GameData gameData) {
         Entity enemyShip = new Enemy();
-        enemyShip.setPolygonCoordinates(-10, -10, 20, 0, -10, 10);
+        enemyShip.setPolygonCoordinates(-5, -5, 10, 0, -5, 5); // enemy ship size
 
         // Random spawn location within game screen bounds
         enemyShip.setX(random.nextInt(gameData.getDisplayWidth()));
         enemyShip.setY(random.nextInt(gameData.getDisplayHeight()));
 
-        enemyShip.setRadius(8);
+        enemyShip.setRadius(4);
         return enemyShip;
     }
 
